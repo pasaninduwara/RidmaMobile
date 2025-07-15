@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <title>SmartZone - Mobile Store</title>
+ <style>
+ * {
+ margin:0;
+ padding:0;
+ box-sizing: border-box;
+ font-family: 'Segoe UI', sans-serif;
+ }
+
+ body {
+ background: #000; /* Black background */
+ color: #fff; /* White text color */
+ }
+
+ header {
+ background: #000; /* Black background */
+ color: #ff9431; /* #ff9431 color for header text */
+ text-align: center;
+ padding:40px 20px;
+ border-bottom:2px solid #ff9431;
+ animation: fadeIn 2s;
+ }
+
+ @keyframes fadeIn {
+ from {
+ opacity:0;
+ }
+ to {
+ opacity:1;
+ }
+ }
+
+ header h1 {
+ font-size:2.8rem;
+ margin-bottom:10px;
+ animation: scaleIn 2s;
+ }
+
+ @keyframes scaleIn {
+ from {
+ transform: scale(0.5);
+ }
+ to {
+ transform: scale(1);
+ }
+ }
+
+ nav {
+ background: rgba(0,0,0,0.9); /* Dark background for nav */
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ padding:15px 10px;
+ position: sticky;
+ top:0;
+ z-index:999;
+ border-bottom:1px solid #ff9431;
+ }
+
+ nav a {
+ color: #fff; /* White text color for nav links */
+ text-decoration: none;
+ margin:10px 15px;
+ font-weight:500;
+ transition:0.3s;
+ }
+
+ nav a:hover {
+ color: #ff9431; /* #ff9431 color on hover */
+ transform: translateY(-3px);
+ }
+
+ .hero {
+ background: linear-gradient(to right, #ff9431, #ff7f00); /* Gradient background for hero section */
+ color: #fff; /* White text color */
+ padding:70px 20px;
+ text-align: center;
+ animation: slideIn 2s;
+ }
+
+ @keyframes slideIn {
+ from {
+ transform: translateX(-100%);
+ }
+ to {
+ transform: translateX(0);
+ }
+ }
+
+ .hero h2 {
+ font-size:2.2rem;
+ margin-bottom:10px;
+ animation: fadeInUp 2s;
+ }
+
+ @keyframes fadeInUp {
+ from {
+ opacity:0;
+ transform: translateY(20px);
+ }
+ to {
+ opacity:1;
+ transform: translateY(0);
+ }
+ }
+
+ section {
+ padding:60px 20px;
+ max-width:1200px;
+ margin: auto;
+ }
+
+ h2 {
+ text-align: center;
+ font-size:2rem;
+ margin-bottom:40px;
+ color: #ff9431; /* #ff9431 color for section headings */
+ animation: fadeIn 2s;
+ }
+
+ .grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+ gap:25px;
+ }
+
+ .card {
+ background: #1a1a1a; /* Dark background for cards */
+ border-radius:12px;
+ box-shadow:0 5px 15px rgba(0,0,0,0.1);
+ overflow: hidden;
+ transition:0.3s ease;
+ animation: fadeInUp 2s;
+ }
+
+ .card:hover {
+ transform: translateY(-5px);
+ box-shadow:0 10px 20px rgba(0,0,0,0.15);
+ }
+
+ .card img {
+ width:100%;
+ height:180px;
+ object-fit: cover;
+ transition:0.3s ease;
+ }
+
+ .card img:hover {
+ transform: scale(1.1);
+ }
+
+ .card h3 {
+ font-size:1.2rem;
+ padding:15px;
+ color: #fff; /* White text color */
+ }
+
+ .card p {
+ padding:0 15px 15px;
+ font-size:0.95rem;
+ color: #ccc; /* Light gray text color */
+ }
+
+ .icon-box {
+ text-align: center;
+ padding:20px;
+ background: #1a1a1a; /* Dark background for icon boxes */
+ border-radius:12px;
+ box-shadow:0 5px 12px rgba(0,0,0,0.07);
+ transition:0.3s ease;
+ animation: fadeInUp 2s;
+ }
+
+ .icon-box:hover {
+ transform: scale(1.05);
+ }
+
+ .icon-box img {
+ width:60px;
+ margin-bottom:10px;
+ transition:0.3s ease;
+ }
+
+ .icon-box img:hover {
+ transform: rotate(360deg);
+ }
+
+ .icon-box h3 {
+ font-size:1.2rem;
+ color: #fff; /* White text color */
+ }
+
+ .feedback, .why-us {
+ background: #1a1a1a; /* Dark background for feedback and why-us sections */
+ border-radius:16px;
+ padding:50px 30px;
+ margin-top:50px;
+ animation: fadeIn 2s;
+ }
+
+ .social {
+ text-align: center;
+ margin-top:60px;
+ animation: fadeIn 2s;
+ }
+
+ .social h2 {
+ margin-bottom:20px;
+ color: #ff9431; /* #ff9431 color for social heading */
+ }
+
+ .social-icons a {
+ display: inline-block;
+ margin:0 10px;
+ font-size:28px;
+ color: #fff; /* White text color for social icons */
+ text-decoration: none;
+ transition:0.3s;
+ }
+
+ .social-icons a:hover {
+ color: #ff9431; /* #ff9431 color on hover */
+ transform: scale(1.2);
+ }
+
+ .contact-info {
+ background: #1a1a1a; /* Dark background for contact info */
+ text-align: center;
+ padding:40px 20px;
+ margin-top:60px;
+ border-top:2px solid #ff9431;
+ animation: fadeIn 2s;
+ }
+
+ .contact-info h2 {
+ color: #ff9431; /* #ff9431 color for contact info heading */
+ margin-bottom:15px;
+ }
+
+ .contact-info p {
+ margin:5px 0;
+ font-size:1rem;
+ color: #ccc; /* Light gray text color */
+ }
+
+ .footer {
+ background: #000; /* Black background for footer */
+ color: #ccc; /* Light gray text color */
+ text-align: center;
+ padding:25px 15px;
+ margin-top:0;
+ border-top:1px solid #ff9431;
+ animation: fadeIn 2s;
+ }
+
+ .footer p {
+ margin:0;
+ }
+ </style>
+</head>
+<body>
+
+ <header>
+ <h1>SmartZone</h1>
+ <p>Your Premium Phone Shop</p>
+ </header>
+
+ <nav>
+ <a href="#">Home</a>
+ <a href="#">Phones</a>
+ <a href="#">Accessories</a>
+ <a href="#">Categories</a>
+ <a href="#">Testimonials</a>
+ <a href="#">Contact</a>
+ </nav>
+
+ <div class="hero">
+ <h2> Mid-Year Mobile Sale is Live!</h2>
+ <p>Up to 50% OFF on selected phones & accessories</p>
+ </div>
+
+ <section>
+ <h2>Shop by Category</h2>
+ <div class="grid">
+ <div class="icon-box">
+ <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" alt="">
+ <h3>Smartphones</h3>
+ </div>
+ <div class="icon-box">
+ <img src="https://cdn-icons-png.flaticon.com/512/633/633652.png" alt="">
+ <h3>Tablets</h3>
+ </div>
+ <div class="icon-box">
+ <img src="https://cdn-icons-png.flaticon.com/512/724/724715.png" alt="">
+ <h3>Watches</h3>
+ </div>
+ <div class="icon-box">
+ <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="">
+ <h3>Accessories</h3>
+ </div>
+ <div class="grid">
+ </div>
+ </section>
+
+ <section>
+ <h2>Top Deals</h2>
+ <div class="grid">
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=iPhone+15+Pro" />
+ <h3>iPhone 15 Pro</h3>
+ <p>Now: $1099 – Titanium Build, Dynamic Island</p>
+ </div>
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=Samsung+S24+Ultra" />
+ <h3>Galaxy S24 Ultra</h3>
+ <p>Now: $999 – 200MP Camera, Stylus Support</p>
+ </div>
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=Pixel+8+Pro" />
+ <h3>Pixel 8 Pro</h3>
+ <p>Now: $899 – Clean Android, Smart AI Features</p>
+ </div>
+ </div>
+ </section>
+
+ <section>
+ <h2>Available Smartphones</h2>
+ <div class="grid">
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=iPhone+14" />
+ <h3>iPhone 14</h3>
+ <p>6.1" Display, A15 Bionic, Dual Camera – $799</p>
+ </div>
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=Galaxy+A54" />
+ <h3>Samsung Galaxy A54</h3>
+ <p>6.4" AMOLED, 8GB RAM, 5000mAh – $499</p>
+ </div>
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=Redmi+Note+13+Pro" />
+ <h3>Redmi Note 13 Pro</h3>
+ <p>Snapdragon 7s Gen2, 200MP Camera – $389</p>
+ </div>
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=Realme+11+Pro" />
+ <h3>Realme 11 Pro</h3>
+ <p>Curved AMOLED, 100MP Camera, 67W Charge – $329</p>
+ </div>
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=OnePlus+Nord+CE+3" />
+ <h3>OnePlus Nord CE3</h3>
+ <p>Snapdragon 782G, 12GB RAM, 80W – $449</p>
+ </div>
+ <div class="card">
+ <img src="https://via.placeholder.com/300x200?text=Vivo+V30" />
+ <h3>Vivo V30</h3>
+ <p>50MP Aura Portrait, 6.78" AMOLED – $459</p>
+ </div>
+ </div>
+ </section>
+
+ <section class="why-us">
+ <h2>Why Choose Us?</h2>
+ <div class="grid">
+ <div class="icon-box">
+ <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="">
+ <h3>Genuine Products</h3>
+ <p>We only sell 100% original phones with warranty.</p>
+ </div>
+ <div class="icon-box">
+ <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="">
+ <h3>Island-wide Delivery</h3>
+ <p>We deliver fast, anywhere in Sri Lanka.</p>
+ </div>
+ <div class="icon-box">
+ <img src="https://cdn-icons-png.flaticon.com/512/1250/1250615.png" alt="">
+ <h3>24/7 Support</h3>
+ <p>We're here to assist you at any time.</p>
+ </div>
+ </div>
+ </section>
+
+ <section class="feedback">
+ <h2>What Customers Say</h2>
+ <div class="grid">
+ <div class="card">
+ <h3>⭐️⭐️⭐️⭐️⭐️</h3>
+ <p>“Best shop in Colombo! Fast delivery and helpful staff.” – Isuru</p>
+ </div>
+ <div class="card">
+ <h3>⭐️⭐️⭐️⭐️⭐️</h3>
+ <p>“Good service and original products. Highly recommended!” – Kaushi</p>
+ </div>
+ <div class="card">
+ <h3>⭐️⭐️⭐️⭐️⭐️</h3>
+ <p>“Love the website design, so easy to use!” – Roshan</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- Follow Us -->
+ <section class="social">
+ <h2>Follow Us</h2>
+ <div class="social-icons">
+ <a href="#" title="Facebook">📘</a>
+ <a href="#" title="Instagram">📸</a>
+ <a href="#" title="Twitter">🐦</a>
+ <a href="#" title="YouTube">▶️</a>
+ </div>
+ </section>
+
+ <!-- Contact Info -->
+ <section class="contact-info">
+ <h2>Contact Information</h2>
+ <p>📍 SmartZone Mobile Store, No.123, Galle Road, Colombo</p>
+ <p>📞 +94 77 123 4567</p>
+ <p>📧 info@smartzone.lk</p>
+ </section>
+
+ <!-- Footer -->
+ <div class="footer">
+ <p>© 2024 SmartZone. All Rights Reserved.</p>
+ </div>
+
+</body>
+</html>
